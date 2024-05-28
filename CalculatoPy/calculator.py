@@ -3,27 +3,26 @@ from tkinter import *
 from PIL import Image, ImageTk
 import os
 
-# Initialize the main window
 root = tk.Tk()
 root.title("MyCalculator")
 root.geometry("400x450+400+100")
 root.configure(bg="dark grey")
 
-# Create a frame to hold all the widgets and center it
+
 frame = Frame(root, bg="dark grey")
 frame.pack(expand=True)
 
-# Global variables
+
 textin = StringVar()
 operator = ""
 
-# Function to handle button clicks and key presses
+
 def clickbut(number):
     global operator
     operator = operator + str(number)
     textin.set(operator)
 
-# Function to handle the equal button click and Enter key press
+
 def equalbut(event=None):
     global operator
     try:
@@ -34,13 +33,13 @@ def equalbut(event=None):
         textin.set("Error")
         operator = ''
 
-# Function to clear the entry field and handle Escape key press
+
 def clrbut(event=None):
     global operator
     operator = ''
     textin.set('')
 
-# Bind keyboard input to corresponding functions
+
 root.bind('0', lambda event: clickbut(0))
 root.bind('1', lambda event: clickbut(1))
 root.bind('2', lambda event: clickbut(2))
@@ -72,7 +71,7 @@ button_texts = [
 
 buttons = []
 
-# Create buttons dynamically
+
 for i, text in enumerate(button_texts):
     if text == 'C':
         button = Button(frame, padx=16, pady=16, bd=8, fg="black", font=("Arial", 12, "bold"),
