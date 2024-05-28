@@ -57,11 +57,11 @@ root.bind('-', lambda event: clickbut('-'))
 root.bind('*', lambda event: clickbut('*'))
 root.bind('/', lambda event: clickbut('/'))
 
-# Entry widget for displaying the input and output
+
 metext = Entry(frame, font=("Arial", 12, "bold"), textvariable=textin, width=25, bd=10, insertwidth=2, bg="#e8b5ce")
 metext.grid(columnspan=4, pady=10)
 
-# Button creation and placement
+
 button_texts = [
     '7', '8', '9', '/',
     '4', '5', '6', '*',
